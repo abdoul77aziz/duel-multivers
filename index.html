@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duels dans le Multivers de la Folie — vingt affrontements inter-univers, jugés sur pièces</title>
+<meta name="description" content="Vingt duels inter-univers analysés sur les feats montrés, sans scaling en chaîne. Naruto, One Piece, JJK, Demon Slayer, Dragon Ball et douze autres univers. 146 pages.">
+<meta property="og:title" content="Duels dans le Multivers de la Folie">
+<meta property="og:description" content="Vingt affrontements inter-univers, jugés sur pièces. 146 pages.">
+<meta property="og:type" content="book">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+/* Polices servies depuis le site : pas de CDN. Deux raisons — la cible
+   camerounaise a souvent une connexion faible, et un appel à Google Fonts
+   transmet l'IP du visiteur, ce qui est un sujet RGPD sur la cible France. */
+@font-face{font-family:'Big Shoulders Display';src:url('fonts/BigShoulders-Bold.woff2') format('woff2');font-weight:700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Big Shoulders Display';src:url('fonts/BigShoulders-Bold-ext.woff2') format('woff2');font-weight:700;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Big Shoulders Display';src:url('fonts/BigShoulders-Black.woff2') format('woff2');font-weight:900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Big Shoulders Display';src:url('fonts/BigShoulders-Black-ext.woff2') format('woff2');font-weight:900;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Outfit';src:url('fonts/Outfit-Regular.woff2') format('woff2');font-weight:400;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Outfit';src:url('fonts/Outfit-Regular-ext.woff2') format('woff2');font-weight:400;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Outfit';src:url('fonts/Outfit-Bold.woff2') format('woff2');font-weight:700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Outfit';src:url('fonts/Outfit-Bold-ext.woff2') format('woff2');font-weight:700;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Tektur';src:url('fonts/Tektur.woff2') format('woff2');font-weight:500;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Tektur';src:url('fonts/Tektur-ext.woff2') format('woff2');font-weight:500;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --papier:#fbf7e9; --papier-2:#f3ecd8;
+  --encre:#1c1a17; --encre-doux:#3b3830; --encre-faible:#6b6659;
+  --a:#6d28d9; --b:#c2181b; --ambre:#8a5a00;
+  --filet:rgba(28,22,10,.14);
+  --display:'Big Shoulders Display',system-ui,sans-serif;
+  --texte:'Outfit',system-ui,sans-serif;
+  --badge:'Tektur',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{
+  background:var(--papier); color:var(--encre);
+  font-family:var(--texte); font-size:17px; line-height:1.6;
+  background-image:
+    radial-gradient(70% 24% at 12% 0%, color-mix(in srgb,var(--a) 7%,transparent) 0%, transparent 70%),
+    radial-gradient(70% 24% at 88% 0%, color-mix(in srgb,var(--b) 6%,transparent) 0%, transparent 70%);
+  background-repeat:no-repeat;
+}
+a{color:inherit}
+::selection{background:var(--a);color:var(--papier)}
+:focus-visible{outline:2px solid var(--b);outline-offset:3px}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px}
+
+.etiquette{
+  font-family:var(--badge); font-size:12px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--encre-faible);
+}
+h1,h2,h3{font-family:var(--display);font-weight:900;line-height:1;text-transform:uppercase}
+h1{font-size:clamp(2.6rem,8vw,4.4rem);letter-spacing:.005em}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:16px}
+h3{font-weight:700;font-size:1.15rem;margin-bottom:6px}
+p{max-width:64ch}
+p+p{margin-top:13px}
+strong{font-weight:700}
+em{font-style:italic}
+
+/* filet + spectre : l'identité vient des données du livre */
+.spectre{display:flex;gap:2px;height:16px;margin:26px 0}
+.spectre i{flex:1 1 0;border-radius:2px}
+.filet{height:2px;background:linear-gradient(90deg,var(--a),var(--b));margin:0}
+
+header{padding:22px 0 0}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;
+  font-family:var(--badge);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--encre-faible)}
+.nav ul{display:none;gap:20px;list-style:none}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--b)}
+@media(min-width:680px){.nav ul{display:flex}}
+
+.hero{padding:44px 0 40px}
+.sur{font-family:var(--badge);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--b);margin-bottom:14px}
+.accroche{font-family:var(--badge);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--encre-doux);margin-top:14px;max-width:52ch}
+.chapo{font-size:1.1rem;color:var(--encre-doux);margin-top:20px;max-width:56ch;font-style:italic}
+.faits{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.faits span{font-family:var(--badge);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--encre-doux);border:1px solid var(--filet);border-radius:3px;padding:5px 10px}
+
+/* achat */
+.achat{display:grid;gap:14px;margin-top:30px}
+@media(min-width:620px){.achat{grid-template-columns:1fr 1fr}}
+.offre{border:1px solid var(--filet);border-radius:4px;padding:18px;background:rgba(255,255,255,.42)}
+.offre .zone{font-family:var(--badge);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--b);margin-bottom:4px}
+.offre .prix{font-family:var(--display);font-weight:900;font-size:2rem;line-height:1;margin:6px 0 3px}
+.offre .moyen{font-size:.86rem;color:var(--encre-faible);margin-bottom:14px}
+.btn{display:block;text-align:center;background:var(--encre);color:var(--papier);
+  font-weight:700;font-size:15px;padding:13px 20px;text-decoration:none;border-radius:3px;transition:background .18s}
+.btn:hover{background:var(--b)}
+.btn.sec{background:transparent;color:var(--encre);border:1.5px solid var(--encre)}
+.btn.sec:hover{background:var(--encre);color:var(--papier)}
+
+section{padding:44px 0}
+.bloc{background:rgba(28,22,10,.035);border:1px solid var(--filet);border-radius:5px;padding:22px}
+
+/* la section qui répond à l'objection */
+.objection{background:var(--encre);color:var(--papier);padding:56px 0;margin:10px 0}
+.objection h2{color:var(--papier)}
+.objection .etiquette{color:#a99cff}
+.objection p{color:#e8e3d6}
+.objection .punch{font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,3.4vw,1.8rem);
+  line-height:1.2;text-transform:uppercase;color:var(--papier);border-left:3px solid #a99cff;padding-left:18px;margin:22px 0}
+.objection .detail{display:grid;gap:16px;margin-top:26px}
+@media(min-width:640px){.objection .detail{grid-template-columns:1fr 1fr}}
+.objection .detail div{border-top:1px solid rgba(255,255,255,.18);padding-top:12px}
+.objection .detail h3{color:#a99cff;font-size:.98rem}
+.objection .detail p{font-size:.94rem;color:#cfc9ba}
+
+/* méthode */
+.regles{display:grid;gap:14px;margin-top:6px}
+@media(min-width:640px){.regles{grid-template-columns:1fr 1fr}}
+.regle{border-left:2.5px solid var(--a);padding-left:14px}
+.regle:nth-child(even){border-left-color:var(--b)}
+.regle p{font-size:.93rem;color:var(--encre-doux)}
+
+/* duels */
+ol.duels{list-style:none;margin-top:6px}
+ol.duels li{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--filet);align-items:baseline}
+ol.duels li:last-child{border-bottom:1px solid var(--filet)}
+ol.duels .n{font-family:var(--display);font-weight:700;color:var(--encre-faible)}
+ol.duels .d{font-size:1rem}
+ol.duels .d b{font-weight:700}
+ol.duels .h{grid-column:2;font-size:.85rem;color:var(--encre-faible);margin-top:1px}
+ol.duels li.me .n{color:var(--b)}
+ol.duels .d em{font-family:var(--badge);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--b);font-style:normal;margin-left:6px}
+
+/* extraits */
+.extraits{display:grid;gap:12px;margin-top:8px}
+@media(min-width:620px){.extraits{grid-template-columns:repeat(3,1fr)}}
+.extrait{border:1px solid var(--filet);border-radius:4px;padding:15px;background:rgba(255,255,255,.4)}
+.extrait .t{font-family:var(--display);font-weight:700;font-size:1.05rem;text-transform:uppercase;margin-bottom:3px}
+.extrait .s{font-family:var(--badge);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--b);margin-bottom:8px}
+.extrait p{font-size:.86rem;color:var(--encre-faible);margin-bottom:12px}
+.extrait a{font-weight:700;font-size:.9rem;text-decoration:none;border-bottom:2px solid var(--a);padding-bottom:1px}
+
+.faq div{padding:15px 0;border-top:1px solid var(--filet)}
+.faq div:last-child{border-bottom:1px solid var(--filet)}
+.faq p{color:var(--encre-doux);font-size:.95rem}
+
+.auteur{display:flex;gap:16px;align-items:flex-start}
+.sceau{width:46px;height:46px;flex:0 0 auto;border-radius:50%;background:var(--a);color:var(--papier);
+  display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:19px}
+
+footer{padding:26px 0 44px;font-family:var(--badge);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--encre-faible);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav class="nav">
+    <span>Duels&nbsp;/&nbsp;Multivers</span>
+    <ul>
+      <li><a href="#pourquoi">Pourquoi payer</a></li>
+      <li><a href="#methode">La méthode</a></li>
+      <li><a href="#duels">Les 20 duels</a></li>
+      <li><a href="#extraits">Extraits</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="wrap"><div class="filet"></div></div>
+
+<div class="wrap hero">
+  <div class="sur">Tier Debate // Anime &amp; Manga</div>
+  <h1>Duels dans le Multivers de la Folie</h1>
+  <p class="accroche">Vingt affrontements inter-univers, jugés sur pièces</p>
+  <div class="spectre"><i style="background:#0369a1"></i><i style="background:#b91c1c"></i><i style="background:#c2410c"></i><i style="background:#1e40af"></i><i style="background:#15803d"></i><i style="background:#1d4ed8"></i><i style="background:#6d28d9"></i><i style="background:#c2181b"></i><i style="background:#14507a"></i><i style="background:#be185d"></i><i style="background:#c0175a"></i><i style="background:#0f766e"></i><i style="background:#9f1239"></i><i style="background:#0e7490"></i><i style="background:#be185d"></i><i style="background:#15532f"></i><i style="background:#b91c1c"></i><i style="background:#075985"></i><i style="background:#334155"></i><i style="background:#15803d"></i><i style="background:#6b21a8"></i><i style="background:#166534"></i><i style="background:#6d28d9"></i><i style="background:#c2410c"></i><i style="background:#4338ca"></i><i style="background:#9f1239"></i><i style="background:#b3123c"></i><i style="background:#c2410c"></i><i style="background:#5b21b6"></i><i style="background:#0e6a80"></i><i style="background:#7e22ce"></i><i style="background:#166534"></i><i style="background:#8a3a14"></i><i style="background:#4c1d95"></i><i style="background:#075985"></i><i style="background:#86198f"></i><i style="background:#b45309"></i><i style="background:#7f1d1d"></i><i style="background:#1e3a5f"></i><i style="background:#a16207"></i></div>
+  <p class="chapo">Un duel ne se gagne pas au plus fort. Il se gagne à la règle que l'autre n'a jamais eu à affronter.</p>
+  <div class="faits">
+    <span>146 pages</span><span>Format A5</span><span>PDF — 3,2 Mo</span>
+    <span>16 univers</span><span>Livraison immédiate</span>
+  </div>
+
+  <div class="achat">
+    <div class="offre">
+      <div class="zone">Cameroun &amp; Afrique</div>
+      <div class="prix">5 000 F</div>
+      <div class="moyen">Orange Money &amp; MTN Mobile Money</div>
+      <a class="btn" href="https://edtjjpfb.mychariow.online/prd_u2jr6m8o" target="_blank" rel="noopener">Acheter par Mobile Money</a>
+    </div>
+    <div class="offre">
+      <div class="zone">International</div>
+      <div class="prix">9,99 €</div>
+      <div class="moyen">PayPal &amp; carte bancaire</div>
+      <a class="btn sec" href="https://payhip.com/b/fBbCg" target="_blank" rel="noopener">Acheter par PayPal</a>
+    </div>
+  </div>
+</div>
+
+<div class="objection" id="pourquoi">
+  <div class="wrap">
+    <div class="etiquette">La question qu'on nous pose en premier</div>
+    <h2>Pourquoi payer, alors que les scans sont gratuits&nbsp;?</h2>
+    <p>C'est la bonne question, et elle mérite une réponse franche plutôt qu'un argumentaire.</p>
+    <p class="punch">Ce livre ne remplace pas les scans. Il sert à gagner la discussion qui vient après.</p>
+    <p>Les scans vous donnent l'histoire. Ils ne vous donnent pas les arguments. Quand la conversation dérape sur « Luffy Gear 5 bat Naruto Baryon », personne n'ouvre un scan&nbsp;: on cherche des preuves, des scènes précises, une logique qui tienne debout trois minutes.</p>
+    <p>Le vrai concurrent de ce livre n'a jamais été le manga. Ce sont les vidéos «&nbsp;qui gagne&nbsp;» de vingt minutes, qui se contredisent entre elles, qui inventent des feats que personne n'a jamais vus, et qu'on ne peut ni citer ni vérifier.</p>
+    <div class="detail">
+      <div>
+        <h3>Une méthode écrite, pas une opinion</h3>
+        <p>Snapshots verrouillés, feats montrés uniquement, aucun scaling en chaîne. Les règles sont énoncées page 3 et tenues vingt fois. Quand le canon ne tranche pas, un encadré le dit — au lieu d'inventer.</p>
+      </div>
+      <div>
+        <h3>Un document, pas une vidéo</h3>
+        <p>146 pages qu'on cite, qu'on relit, qu'on envoie en pleine dispute. Un argument dans une vidéo de vingt minutes n'est pas un argument&nbsp;: c'est un souvenir approximatif.</p>
+      </div>
+      <div>
+        <h3>En français, pour nous</h3>
+        <p>Le débat sérieux existe surtout en anglais. Ici, il est écrit dans la langue dans laquelle vous vous engueulez déjà, par quelqu'un qui suit les mêmes pages que vous.</p>
+      </div>
+      <div>
+        <h3>Ce que 5 000 F achètent vraiment</h3>
+        <p>À peu près un forfait data. Celui que vous brûleriez en regardant trois vidéos qui vous donneront trois réponses différentes — et aucune source.</p>
+      </div>
+    </div>
+    <p style="margin-top:26px">Et si vous n'êtes toujours pas convaincu&nbsp;: <a href="#extraits" style="border-bottom:2px solid #a99cff">un duel complet est gratuit</a>. Lisez-le en entier, verdict compris, et décidez ensuite.</p>
+  </div>
+</div>
+
+<section class="wrap" id="methode">
+  <div class="etiquette">La méthode</div>
+  <h2>Quatre règles, tenues vingt fois</h2>
+  <div class="regles">
+    <div class="regle"><h3>Le feat</h3><p>Un exploit <b>montré</b> à l'écran ou sur la page. Si un personnage dit qu'un autre pourrait détruire un continent, ce n'est pas un feat&nbsp;: c'est du dialogue.</p></div>
+    <div class="regle"><h3>Le snapshot</h3><p>Chaque fiche verrouille un instant précis. Luffy apparaît deux fois dans ce livre — avant l'ellipse et en Gear 5 — et ce sont deux combattants différents.</p></div>
+    <div class="regle"><h3>Pas de scaling en chaîne</h3><p>«&nbsp;A a battu B, or B avait blessé C, donc A bat C&nbsp;» est interdit ici. Un combat se gagne sur des conditions, pas sur un classement.</p></div>
+    <div class="regle"><h3>La clause de victoire</h3><p>Mise hors de combat&nbsp;? Mort définitive&nbsp;? Scellement&nbsp;? C'est écrit avant chaque duel — et certains basculent entièrement là-dessus.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="duels">
+  <div class="etiquette">Le sommaire</div>
+  <h2>Les vingt duels</h2>
+  <ol class="duels">
+      <li><span class="n">01</span><span class="d"><b>Killua</b> vs <b>Edward</b></span><span class="h">Le prodige assassin contre le génie alchimiste</span></li>
+      <li><span class="n">02</span><span class="d"><b>Naruto</b> vs <b>Ichigo</b></span><span class="h">Mode Ermite contre Bankai de base</span></li>
+      <li><span class="n">03</span><span class="d"><b>Zoro</b> vs <b>Sanji</b></span><span class="h">Le bretteur démoniaque contre la jambe noire</span></li>
+      <li><span class="n">04</span><span class="d"><b>Boruto</b> vs <b>Luffy</b></span><span class="h">Le sceau du Karma contre le fruit du caoutchouc</span></li>
+      <li><span class="n">05</span><span class="d"><b>Mikasa</b> vs <b>Nezuko</b></span><span class="h">La lame qui ne tue pas contre le feu qui ne brûle pas</span></li>
+      <li><span class="n">06</span><span class="d"><b>Sakura</b> vs <b>Maki</b></span><span class="h">Le poing qui répare contre la lame sans signature</span></li>
+      <li><span class="n">07</span><span class="d"><b>Alucard</b> vs <b>Rimuru</b></span><span class="h">Le roi sans vie contre le slime qui digère les dieux</span></li>
+      <li><span class="n">08</span><span class="d"><b>Hisoka</b> vs <b>Toji</b></span><span class="h">Le joker sans maître contre le fantôme sans énergie</span></li>
+      <li><span class="n">09</span><span class="d"><b>Shimon</b> vs <b>Yuno</b></span><span class="h">L'œil qui voit l'invisible contre la lame qu'on ne voit jamais venir</span></li>
+      <li><span class="n">10</span><span class="d"><b>Levi</b> vs <b>Gon</b></span><span class="h">Le soldat le plus fort de l'humanité contre le prix ultime d'une vengeance</span></li>
+      <li><span class="n">11</span><span class="d"><b>Kaguya</b> vs <b>Meliodas</b></span><span class="h">La déesse des dimensions contre le dragon de la colère</span></li>
+      <li><span class="n">12</span><span class="d"><b>Itachi</b> vs <b>Escanor</b></span><span class="h">L'œil qui plie l'esprit contre le lion qui brûle le ciel</span></li>
+      <li><span class="n">13</span><span class="d"><b>Aizen</b> vs <b>Muzan</b></span><span class="h">Le maître de l'illusion contre le roi qui ne meurt jamais tout à fait</span></li>
+      <li><span class="n">14</span><span class="d"><b>Luffy</b> vs <b>Naruto</b></span><span class="h">Le rire qui plie la réalité contre la fusion qui dévore le temps</span></li>
+      <li><span class="n">15</span><span class="d"><b>Sasuke</b> vs <b>Kaido</b></span><span class="h">L'œil qui déplace le monde contre la bête qui refuse de mourir</span></li>
+      <li><span class="n">16</span><span class="d"><b>Meruem</b> vs <b>Tenshinhan</b></span><span class="h">L'intelligence absolue contre le sacrifice absolu</span></li>
+      <li><span class="n">17</span><span class="d"><b>Netero</b> vs <b>Yami</b></span><span class="h">La prière qui frappe plus vite que le son contre la lame qui tranche l'espace</span></li>
+      <li class="me"><span class="n">18</span><span class="d"><b>Gojo</b> vs <b>Newgate</b> <em>Main event</em></span><span class="h">Le paradoxe mathématique contre l'homme qui fait trembler le monde</span></li>
+      <li class="me"><span class="n">19</span><span class="d"><b>Denji</b> vs <b>Sukuna</b> <em>Main event</em></span><span class="h">Le garçon qu'on sous-estime contre le roi qu'on n'a jamais vaincu</span></li>
+      <li class="me"><span class="n">20</span><span class="d"><b>Goku</b> vs <b>Saitama</b> <em>Main event</em></span><span class="h">Le guerrier qui cherche encore la limite contre l'homme qui l'a déjà oubliée</span></li>
+  </ol>
+</section>
+
+<section class="wrap" id="extraits">
+  <div class="etiquette">Gratuit, sans inscription</div>
+  <h2>Lisez avant d'acheter</h2>
+  <p>Un duel complet, verdict compris. Et deux aperçus qui s'arrêtent là où l'analyse commence.</p>
+  <div class="extraits">
+    <div class="extrait">
+      <div class="s">Duel complet</div>
+      <div class="t">Mikasa vs Nezuko</div>
+      <p>Les deux combattantes arrivent avec l'arme qui a fait leur légende. Toutes deux la voient s'éteindre.</p>
+      <a href="extraits/Extrait_05_Mikasa_vs_Nezuko.pdf" download>Télécharger — 8 pages</a>
+    </div>
+    <div class="extrait">
+      <div class="s">Aperçu</div>
+      <div class="t">Itachi vs Escanor</div>
+      <p>Le genjutsu le plus redouté de son univers, face au seul esprit dont le canon a déjà prouvé qu'il résiste.</p>
+      <a href="extraits/Extrait_12_Itachi_vs_Escanor.pdf" download>Télécharger — 4 pages</a>
+    </div>
+    <div class="extrait">
+      <div class="s">Aperçu</div>
+      <div class="t">Luffy vs Naruto</div>
+      <p>Une régénération absolue contre un drain de vie qui présuppose du chakra — chez un adversaire qui n'en a pas.</p>
+      <a href="extraits/Extrait_14_Luffy_vs_Naruto.pdf" download>Télécharger — 4 pages</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="etiquette">L'auteur</div>
+  <div class="auteur">
+    <div class="sceau">AA</div>
+    <div>
+      <p><strong>Abdoul Aziz Atonfo</strong>, qui signe <strong>Captain Yami</strong>, écrit sur les univers shonen depuis les pages otaku camerounaises. <em>Duels dans le Multivers de la Folie</em> est son premier ouvrage.</p>
+      <p style="color:var(--encre-faible);font-size:.9rem;margin-top:10px">Oui, l'auteur porte le nom d'un personnage qui apparaît dans le livre. Et oui, il y gagne son duel. Le colophon s'en explique — relisez la fiche 17 et jugez.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap faq" id="faq">
+  <div class="etiquette">Avant d'acheter</div>
+  <h2>Questions fréquentes</h2>
+  <div><h3>Sous quel format je reçois le livre&nbsp;?</h3><p>Un PDF de 3,2 Mo, format A5, avec sommaire cliquable. Il se lit sur téléphone, tablette ou ordinateur, et il est assez léger pour se partager sans vider un forfait.</p></div>
+  <div><h3>Comment je reçois le fichier après paiement&nbsp;?</h3><p>Le lien de téléchargement s'affiche immédiatement après le paiement et vous est aussi envoyé par email. Aucune attente, aucune validation manuelle.</p></div>
+  <div><h3>Il y a des images des mangas dedans&nbsp;?</h3><p>Aucune, et c'est délibéré. Ce livre ne reproduit ni planche, ni capture, ni logo&nbsp;: c'est un ouvrage d'analyse indépendant, non affilié aux éditeurs des œuvres commentées. Toute sa mise en page est originale.</p></div>
+  <div><h3>Je ne suis pas d'accord avec un verdict.</h3><p>Parfait — c'est le but. Chaque fiche se termine par une question ouverte, et les encadrés ambre marquent les endroits où le canon lui-même ne tranche pas. Venez en discuter dans le groupe.</p></div>
+  <div><h3>Et si le livre ne me plaît pas&nbsp;?</h3><p>Compte tenu de la nature numérique et immédiatement accessible du produit, aucun remboursement n'est possible une fois le fichier téléchargé, sauf en cas de défaut avéré du produit (fichier corrompu, contenu non conforme à la description). En cas de problème, contactez-nous sous 7 jours à <a href="mailto:abdoul.atonfo@outlook.fr">abdoul.atonfo@outlook.fr</a> pour une résolution ou un remboursement au cas par cas.</p></div>
+</section>
+
+<div class="wrap"><div class="filet"></div></div>
+
+<section class="wrap" style="padding:48px 0 56px">
+  <h2>Prêt pour le premier duel&nbsp;?</h2>
+  <p style="margin-bottom:22px">146 pages, vingt verdicts argumentés, et une question laissée ouverte — la vôtre.</p>
+  <div class="achat">
+    <div class="offre">
+      <div class="zone">Cameroun &amp; Afrique</div>
+      <div class="prix">5 000 F</div>
+      <div class="moyen">Orange Money &amp; MTN Mobile Money</div>
+      <a class="btn" href="https://edtjjpfb.mychariow.online/prd_u2jr6m8o" target="_blank" rel="noopener">Acheter par Mobile Money</a>
+    </div>
+    <div class="offre">
+      <div class="zone">International</div>
+      <div class="prix">9,99 €</div>
+      <div class="moyen">PayPal &amp; carte bancaire</div>
+      <a class="btn sec" href="https://payhip.com/b/fBbCg" target="_blank" rel="noopener">Acheter par PayPal</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>Duels dans le Multivers de la Folie</span>
+  <span>© 2026 Abdoul Aziz Atonfo — MHC Comparatif</span>
+</footer>
+
+</body>
+</html>
