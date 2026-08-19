@@ -38,11 +38,11 @@
   --badge:'Tektur',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;font-size:110%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{
   background:var(--papier); color:var(--encre);
-  font-family:var(--texte); font-size:17px; line-height:1.6;
+  font-family:var(--texte); font-size:18.7px; line-height:1.6;
   background-image:
     radial-gradient(70% 24% at 12% 0%, color-mix(in srgb,var(--a) 7%,transparent) 0%, transparent 70%),
     radial-gradient(70% 24% at 88% 0%, color-mix(in srgb,var(--b) 6%,transparent) 0%, transparent 70%);
@@ -54,7 +54,7 @@ a{color:inherit}
 .wrap{max-width:780px;margin:0 auto;padding:0 24px}
 
 .etiquette{
-  font-family:var(--badge); font-size:12px; letter-spacing:.16em;
+  font-family:var(--badge); font-size:13.2px; letter-spacing:.16em;
   text-transform:uppercase; color:var(--encre-faible);
 }
 h1,h2,h3{font-family:var(--display);font-weight:900;line-height:1;text-transform:uppercase}
@@ -72,30 +72,50 @@ em{font-style:italic}
 .filet{height:2px;background:linear-gradient(90deg,var(--a),var(--b));margin:0}
 
 header{padding:22px 0 0}
-.nav{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;
-  font-family:var(--badge);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--encre-faible)}
+.nav{position:relative;display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;
+  font-family:var(--badge);font-size:13.2px;letter-spacing:.1em;text-transform:uppercase;color:var(--encre-faible)}
 .nav ul{display:none;gap:20px;list-style:none}
 .nav a{text-decoration:none}
 .nav a:hover{color:var(--b)}
+.menu-toggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:24px;cursor:pointer;background:none;border:none;padding:0}
+.burger span{display:block;height:2px;width:100%;background:var(--encre);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.menu-toggle:focus-visible ~ .burger{outline:2px solid var(--b);outline-offset:3px}
 @media(min-width:680px){.nav ul{display:flex}}
+@media(max-width:679px){
+  .burger{display:flex}
+  .nav ul{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:var(--papier);border:1px solid var(--filet);border-top:none;
+    padding:6px 20px 12px;box-shadow:0 10px 20px rgba(28,22,10,.14);z-index:30;
+  }
+  .nav ul li{border-top:1px solid var(--filet)}
+  .nav ul li:first-child{border-top:none}
+  .nav ul li a{display:block;padding:11px 0}
+  .menu-toggle:checked ~ ul{display:flex}
+  .menu-toggle:checked ~ .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-toggle:checked ~ .burger span:nth-child(2){opacity:0}
+  .menu-toggle:checked ~ .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
 
 .hero{padding:44px 0 40px}
-.sur{font-family:var(--badge);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--b);margin-bottom:14px}
-.accroche{font-family:var(--badge);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--encre-doux);margin-top:14px;max-width:52ch}
+.sur{font-family:var(--badge);font-size:13.8px;letter-spacing:.22em;text-transform:uppercase;color:var(--b);margin-bottom:14px}
+.accroche{font-family:var(--badge);font-size:16.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--encre-doux);margin-top:14px;max-width:52ch}
 .chapo{font-size:1.1rem;color:var(--encre-doux);margin-top:20px;max-width:56ch;font-style:italic}
 .faits{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.faits span{font-family:var(--badge);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
+.faits span{font-family:var(--badge);font-size:12.7px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--encre-doux);border:1px solid var(--filet);border-radius:3px;padding:5px 10px}
 
 /* achat */
 .achat{display:grid;gap:14px;margin-top:30px}
 @media(min-width:620px){.achat{grid-template-columns:1fr 1fr}}
 .offre{border:1px solid var(--filet);border-radius:4px;padding:18px;background:rgba(255,255,255,.42)}
-.offre .zone{font-family:var(--badge);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--b);margin-bottom:4px}
+.offre .zone{font-family:var(--badge);font-size:12.1px;letter-spacing:.13em;text-transform:uppercase;color:var(--b);margin-bottom:4px}
 .offre .prix{font-family:var(--display);font-weight:900;font-size:2rem;line-height:1;margin:6px 0 3px}
 .offre .moyen{font-size:.86rem;color:var(--encre-faible);margin-bottom:14px}
 .btn{display:block;text-align:center;background:var(--encre);color:var(--papier);
-  font-weight:700;font-size:15px;padding:13px 20px;text-decoration:none;border-radius:3px;transition:background .18s}
+  font-weight:700;font-size:16.5px;padding:13px 20px;text-decoration:none;border-radius:3px;transition:background .18s}
 .btn:hover{background:var(--b)}
 .btn.sec{background:transparent;color:var(--encre);border:1.5px solid var(--encre)}
 .btn.sec:hover{background:var(--encre);color:var(--papier)}
@@ -132,14 +152,14 @@ ol.duels .d{font-size:1rem}
 ol.duels .d b{font-weight:700}
 ol.duels .h{grid-column:2;font-size:.85rem;color:var(--encre-faible);margin-top:1px}
 ol.duels li.me .n{color:var(--b)}
-ol.duels .d em{font-family:var(--badge);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--b);font-style:normal;margin-left:6px}
+ol.duels .d em{font-family:var(--badge);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--b);font-style:normal;margin-left:6px}
 
 /* extraits */
 .extraits{display:grid;gap:12px;margin-top:8px}
 @media(min-width:620px){.extraits{grid-template-columns:repeat(3,1fr)}}
 .extrait{border:1px solid var(--filet);border-radius:4px;padding:15px;background:rgba(255,255,255,.4)}
 .extrait .t{font-family:var(--display);font-weight:700;font-size:1.05rem;text-transform:uppercase;margin-bottom:3px}
-.extrait .s{font-family:var(--badge);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--b);margin-bottom:8px}
+.extrait .s{font-family:var(--badge);font-size:11.6px;letter-spacing:.11em;text-transform:uppercase;color:var(--b);margin-bottom:8px}
 .extrait p{font-size:.86rem;color:var(--encre-faible);margin-bottom:12px}
 .extrait a{font-weight:700;font-size:.9rem;text-decoration:none;border-bottom:2px solid var(--a);padding-bottom:1px}
 
@@ -149,10 +169,12 @@ ol.duels .d em{font-family:var(--badge);font-size:10px;letter-spacing:.12em;text
 
 .auteur{display:flex;gap:16px;align-items:flex-start}
 .sceau{width:46px;height:46px;flex:0 0 auto;border-radius:50%;background:var(--a);color:var(--papier);
-  display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:19px}
+  display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:21px}
 
-footer{padding:26px 0 44px;font-family:var(--badge);font-size:11px;letter-spacing:.08em;
+footer{padding:26px 0 44px;font-family:var(--badge);font-size:12.1px;letter-spacing:.08em;
   text-transform:uppercase;color:var(--encre-faible);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--b)}
 </style>
 </head>
 <body>
@@ -160,7 +182,9 @@ footer{padding:26px 0 44px;font-family:var(--badge);font-size:11px;letter-spacin
 <header class="wrap">
   <nav class="nav">
     <span>Duels&nbsp;/&nbsp;Multivers</span>
-    <ul>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></label>
+    <ul id="menu-liste">
       <li><a href="#pourquoi">Pourquoi payer</a></li>
       <li><a href="#methode">La méthode</a></li>
       <li><a href="#duels">Les 20 duels</a></li>
@@ -185,18 +209,26 @@ footer{padding:26px 0 44px;font-family:var(--badge);font-size:11px;letter-spacin
   <div class="achat">
     <div class="offre">
       <div class="zone">Cameroun &amp; Afrique</div>
-      <div class="prix">5 000 F</div>
+      <div class="prix">2 000 FCFA</div>
       <div class="moyen">Orange Money &amp; MTN Mobile Money</div>
       <a class="btn" href="https://edtjjpfb.mychariow.online/prd_u2jr6m8o" target="_blank" rel="noopener">Acheter par Mobile Money</a>
     </div>
     <div class="offre">
       <div class="zone">International</div>
-      <div class="prix">9,99 €</div>
+      <div class="prix">3,99 €</div>
       <div class="moyen">PayPal &amp; carte bancaire</div>
       <a class="btn sec" href="https://payhip.com/b/fBbCg" target="_blank" rel="noopener">Acheter par PayPal</a>
     </div>
   </div>
 </div>
+
+<section class="wrap" id="synopsis">
+  <div class="etiquette">Le livre</div>
+  <h2>Vingt combats impossibles</h2>
+  <p>Et si les plus grands personnages de manga et d'anime s'affrontaient au-delà de leurs univers&nbsp;?</p>
+  <p>De Naruto à Luffy, de Gojo à Barbe Blanche, <em>Duels dans le Multivers de la Folie</em> imagine vingt combats impossibles en confrontant leurs capacités, leurs techniques et leurs faiblesses selon les faits montrés dans leurs œuvres.</p>
+  <p>Pas de simple concours de puissance&nbsp;: chaque duel se joue sur une règle, une incompatibilité ou un détail capable de renverser le combat. Vingt affrontements, dix-neuf verdicts… et une dernière question laissée au lecteur.</p>
+</section>
 
 <div class="objection" id="pourquoi">
   <div class="wrap">
@@ -220,7 +252,7 @@ footer{padding:26px 0 44px;font-family:var(--badge);font-size:11px;letter-spacin
         <p>Le débat sérieux existe surtout en anglais. Ici, il est écrit dans la langue dans laquelle vous vous engueulez déjà, par quelqu'un qui suit les mêmes pages que vous.</p>
       </div>
       <div>
-        <h3>Ce que 5 000 F achètent vraiment</h3>
+        <h3>Ce que 2 000 FCFA achètent vraiment</h3>
         <p>À peu près un forfait data. Celui que vous brûleriez en regardant trois vidéos qui vous donneront trois réponses différentes — et aucune source.</p>
       </div>
     </div>
@@ -310,24 +342,24 @@ footer{padding:26px 0 44px;font-family:var(--badge);font-size:11px;letter-spacin
   <div><h3>Comment je reçois le fichier après paiement&nbsp;?</h3><p>Le lien de téléchargement s'affiche immédiatement après le paiement et vous est aussi envoyé par email. Aucune attente, aucune validation manuelle.</p></div>
   <div><h3>Il y a des images des mangas dedans&nbsp;?</h3><p>Aucune, et c'est délibéré. Ce livre ne reproduit ni planche, ni capture, ni logo&nbsp;: c'est un ouvrage d'analyse indépendant, non affilié aux éditeurs des œuvres commentées. Toute sa mise en page est originale.</p></div>
   <div><h3>Je ne suis pas d'accord avec un verdict.</h3><p>Parfait — c'est le but. Chaque fiche se termine par une question ouverte, et les encadrés ambre marquent les endroits où le canon lui-même ne tranche pas. Venez en discuter dans le groupe.</p></div>
-  <div><h3>Et si le livre ne me plaît pas&nbsp;?</h3><p>Compte tenu de la nature numérique et immédiatement accessible du produit, aucun remboursement n'est possible une fois le fichier téléchargé, sauf en cas de défaut avéré du produit (fichier corrompu, contenu non conforme à la description). En cas de problème, contactez-nous sous 7 jours à <a href="mailto:abdoul.atonfo@outlook.fr">abdoul.atonfo@outlook.fr</a> pour une résolution ou un remboursement au cas par cas.</p></div>
+  <div><h3>Et si le livre ne me plaît pas&nbsp;?</h3><p>Compte tenu de la nature numérique et immédiatement accessible du produit, aucun remboursement n'est possible une fois le fichier téléchargé, sauf en cas de défaut avéré du produit (fichier corrompu, contenu non conforme à la description). En cas de problème, contactez-nous sous 7 jours à <a href="mailto:abdoul.atonfo@outlook.fr">abdoul.atonfo@outlook.fr</a> pour une résolution ou un remboursement au cas par cas. Détails complets dans les <a href="mentions-legales.html">mentions légales</a>.</p></div>
 </section>
 
 <div class="wrap"><div class="filet"></div></div>
 
 <section class="wrap" style="padding:48px 0 56px">
   <h2>Prêt pour le premier duel&nbsp;?</h2>
-  <p style="margin-bottom:22px">146 pages, vingt verdicts argumentés, et une question laissée ouverte — la vôtre.</p>
+  <p style="margin-bottom:22px">146 pages, dix-neuf verdicts argumentés, et une dernière question laissée ouverte — la vôtre.</p>
   <div class="achat">
     <div class="offre">
       <div class="zone">Cameroun &amp; Afrique</div>
-      <div class="prix">5 000 F</div>
+      <div class="prix">2 000 FCFA</div>
       <div class="moyen">Orange Money &amp; MTN Mobile Money</div>
       <a class="btn" href="https://edtjjpfb.mychariow.online/prd_u2jr6m8o" target="_blank" rel="noopener">Acheter par Mobile Money</a>
     </div>
     <div class="offre">
       <div class="zone">International</div>
-      <div class="prix">9,99 €</div>
+      <div class="prix">3,99 €</div>
       <div class="moyen">PayPal &amp; carte bancaire</div>
       <a class="btn sec" href="https://payhip.com/b/fBbCg" target="_blank" rel="noopener">Acheter par PayPal</a>
     </div>
@@ -337,7 +369,13 @@ footer{padding:26px 0 44px;font-family:var(--badge);font-size:11px;letter-spacin
 <footer class="wrap">
   <span>Duels dans le Multivers de la Folie</span>
   <span>© 2026 Abdoul Aziz Atonfo — MHC Comparatif</span>
+  <a href="mentions-legales.html">Mentions légales</a>
 </footer>
 
+<script>
+document.getElementById('menu-liste').addEventListener('click',function(e){
+  if(e.target.tagName==='A')document.getElementById('menu-toggle').checked=false;
+});
+</script>
 </body>
 </html>
