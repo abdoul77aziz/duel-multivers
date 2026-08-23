@@ -13,6 +13,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://abdoul77aziz.github.io/duel-multivers/">
+<link rel="alternate" hreflang="en" href="https://abdoul77aziz.github.io/duel-multivers/en/">
 <style>
 /* Polices servies depuis le site : pas de CDN. Deux raisons — la cible
    camerounaise a souvent une connexion faible, et un appel à Google Fonts
@@ -38,11 +40,11 @@
   --badge:'Tektur',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:110%}
+html{scroll-behavior:smooth;font-size:119%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{
   background:var(--papier); color:var(--encre);
-  font-family:var(--texte); font-size:18.7px; line-height:1.6;
+  font-family:var(--texte); font-size:20.2px; line-height:1.6;
   background-image:
     radial-gradient(70% 24% at 12% 0%, color-mix(in srgb,var(--a) 7%,transparent) 0%, transparent 70%),
     radial-gradient(70% 24% at 88% 0%, color-mix(in srgb,var(--b) 6%,transparent) 0%, transparent 70%);
@@ -72,11 +74,20 @@ em{font-style:italic}
 .filet{height:2px;background:linear-gradient(90deg,var(--a),var(--b));margin:0}
 
 header{padding:22px 0 0}
+header.wrap{max-width:980px}
 .nav{position:relative;display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;
   font-family:var(--badge);font-size:13.2px;letter-spacing:.1em;text-transform:uppercase;color:var(--encre-faible)}
-.nav ul{display:none;gap:20px;list-style:none}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav ul{display:none;gap:18px;list-style:none;flex-wrap:wrap;row-gap:8px;justify-content:flex-end}
+.nav ul li a{white-space:nowrap}
 .nav a{text-decoration:none}
 .nav a:hover{color:var(--b)}
+
+/* sélecteur de langue : toujours visible, jamais planqué dans le menu mobile */
+.lang-switch{display:flex;border:1.5px solid var(--encre);border-radius:20px;overflow:hidden;flex:0 0 auto}
+.lang-switch a{padding:6px 13px;font-weight:700;transition:background .15s,color .15s}
+.lang-switch a.actif{background:var(--encre);color:var(--papier);pointer-events:none}
+.lang-switch a:not(.actif):hover{background:rgba(28,22,10,.08);color:var(--encre)}
 .menu-toggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
 .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:24px;cursor:pointer;background:none;border:none;padding:0}
 .burger span{display:block;height:2px;width:100%;background:var(--encre);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
@@ -182,15 +193,20 @@ footer a:hover{color:var(--b)}
 <header class="wrap">
   <nav class="nav">
     <span>Duels&nbsp;/&nbsp;Multivers</span>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></label>
-    <ul id="menu-liste">
-      <li><a href="#pourquoi">Pourquoi payer</a></li>
-      <li><a href="#methode">La méthode</a></li>
-      <li><a href="#duels">Les 20 duels</a></li>
-      <li><a href="#extraits">Extraits</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Langue">
+        <a href="./" class="actif" aria-current="true">FR</a><a href="en/">EN</a>
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></label>
+      <ul id="menu-liste">
+        <li><a href="#pourquoi">Pourquoi payer</a></li>
+        <li><a href="#methode">La méthode</a></li>
+        <li><a href="#duels">Les 20 duels</a></li>
+        <li><a href="#extraits">Extraits</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
 <div class="wrap"><div class="filet"></div></div>
@@ -199,7 +215,7 @@ footer a:hover{color:var(--b)}
   <div class="sur">Tier Debate // Anime &amp; Manga</div>
   <h1>Duels dans le Multivers de la Folie</h1>
   <p class="accroche">Vingt affrontements inter-univers, jugés sur pièces</p>
-  <div class="spectre"><i style="background:#0369a1"></i><i style="background:#b91c1c"></i><i style="background:#c2410c"></i><i style="background:#1e40af"></i><i style="background:#15803d"></i><i style="background:#1d4ed8"></i><i style="background:#6d28d9"></i><i style="background:#c2181b"></i><i style="background:#14507a"></i><i style="background:#be185d"></i><i style="background:#c0175a"></i><i style="background:#0f766e"></i><i style="background:#9f1239"></i><i style="background:#0e7490"></i><i style="background:#be185d"></i><i style="background:#15532f"></i><i style="background:#b91c1c"></i><i style="background:#075985"></i><i style="background:#334155"></i><i style="background:#15803d"></i><i style="background:#6b21a8"></i><i style="background:#166534"></i><i style="background:#6d28d9"></i><i style="background:#c2410c"></i><i style="background:#4338ca"></i><i style="background:#9f1239"></i><i style="background:#b3123c"></i><i style="background:#c2410c"></i><i style="background:#5b21b6"></i><i style="background:#0e6a80"></i><i style="background:#7e22ce"></i><i style="background:#166534"></i><i style="background:#8a3a14"></i><i style="background:#4c1d95"></i><i style="background:#075985"></i><i style="background:#86198f"></i><i style="background:#b45309"></i><i style="background:#7f1d1d"></i><i style="background:#1e3a5f"></i><i style="background:#a16207"></i></div>
+  <div class="spectre"><i style="background:#0369a1"></i><i style="background:#b91c1c"></i><i style="background:#c2410c"></i><i style="background:#1e40af"></i><i style="background:#15803d"></i><i style="background:#1d4ed8"></i><i style="background:#6d28d9"></i><i style="background:#c2181b"></i><i style="background:#14507a"></i><i style="background:#be185d"></i><i style="background:#c0175a"></i><i style="background:#0f766e"></i><i style="background:#9f1239"></i><i style="background:#0e7490"></i><i style="background:#be185d"></i><i style="background:#15532f"></i><i style="background:#b91c1c"></i><i style="background:#075985"></i><i style="background:#334155"></i><i style="background:#15803d"></i><i style="background:#6b21a8"></i><i style="background:#166534"></i><i style="background:#6d28d9"></i><i style="background:#c2410c"></i><i style="background:#4338ca"></i><i style="background:#9f1239"></i><i style="background:#b3123c"></i><i style="background:#c2410c"></i><i style="background:#5b21b6"></i><i style="background:#0e6a80"></i><i style="background:#7e22ce"></i><i style="background:#166534"></i><i style="background:#8a3a14"></i><i style="background:#4c1d95"></i><i style="background:#075985"></i><i style="background:#86198f"></i><i style="background:#b45309"></i><i style="background:#7f1d1d"></i><i style="background:#1e3a5f"></i><i style="background:#8f5606"></i></div>
   <p class="chapo">Un duel ne se gagne pas au plus fort. Il se gagne à la règle que l'autre n'a jamais eu à affronter.</p>
   <div class="faits">
     <span>146 pages</span><span>Format A5</span><span>PDF — 3,2 Mo</span>
@@ -369,7 +385,7 @@ footer a:hover{color:var(--b)}
 <footer class="wrap">
   <span>Duels dans le Multivers de la Folie</span>
   <span>© 2026 Abdoul Aziz Atonfo — MHC Comparatif</span>
-  <a href="mentions-legales.html">Mentions légales</a>
+  <span><a href="en/">English</a> · <a href="mentions-legales.html">Mentions légales</a></span>
 </footer>
 
 <script>
