@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Duels in the Multiverse of Madness — twenty cross-universe clashes, judged on the evidence</title>
-<meta name="description" content="Twenty cross-universe anime and manga duels, judged strictly on demonstrated feats, no chained scaling. Naruto, One Piece, JJK, Demon Slayer, Dragon Ball and eleven other universes. 159 pages.">
+<meta name="description" content="You think you know who wins? Twenty cross-universe anime and manga duels, judged strictly on demonstrated feats, no chained scaling. Naruto, One Piece, JJK, Demon Slayer, Dragon Ball and eleven other universes. Three complete duels free to read.">
 <meta property="og:title" content="Duels in the Multiverse of Madness">
-<meta property="og:description" content="Twenty cross-universe clashes, judged on the evidence. 159 pages.">
+<meta property="og:description" content="You think you know who wins. Prove it. Twenty cross-universe clashes judged on the evidence — three complete duels free.">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://abdoul77aziz.github.io/duel-multivers/en/">
 <meta property="og:image" content="https://abdoul77aziz.github.io/duel-multivers/og-image-en.png">
@@ -73,8 +73,12 @@ em{font-style:italic}
 .spectre i{flex:1 1 0;border-radius:2px}
 .filet{height:2px;background:linear-gradient(90deg,var(--a),var(--b));margin:0}
 
-header{padding:22px 0 0}
-header.wrap{max-width:980px}
+/* Sticky bar: the FR/EN switch and the anchors stay reachable through the
+   whole scroll. The gradient rule doubles as the bar's bottom edge. */
+header{position:sticky;top:0;z-index:40;background:var(--papier);padding:15px 0 0}
+header .wrap{max-width:980px}
+/* without this, an anchor lands underneath the sticky bar */
+[id]{scroll-margin-top:92px}
 .nav{position:relative;display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;
   font-family:var(--badge);font-size:13.2px;letter-spacing:.1em;text-transform:uppercase;color:var(--encre-faible)}
 .nav-right{display:flex;align-items:center;gap:14px}
@@ -110,13 +114,46 @@ header.wrap{max-width:980px}
   .menu-toggle:checked ~ .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 }
 
-.hero{padding:44px 0 40px}
+/* The 24px of horizontal padding come from .wrap, but .hero and section.wrap
+   match or beat its specificity: without restating them here, the hero sits
+   flush against the screen edge on mobile and sections touch vertically. */
+.hero{padding:44px 24px 40px}
 .sur{font-family:var(--badge);font-size:13.8px;letter-spacing:.22em;text-transform:uppercase;color:var(--b);margin-bottom:14px}
 .accroche{font-family:var(--badge);font-size:16.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--encre-doux);margin-top:14px;max-width:52ch}
 .chapo{font-size:1.1rem;color:var(--encre-doux);margin-top:20px;max-width:56ch;font-style:italic}
 .faits{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .faits span{font-family:var(--badge);font-size:12.7px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--encre-doux);border:1px solid var(--filet);border-radius:3px;padding:5px 10px}
+
+/* The three closing main events, moved into the window. Traffic is generic:
+   the visitor should hit a fight that itches before hitting a price. */
+.affiches{display:grid;gap:10px;margin-top:24px}
+@media(min-width:620px){.affiches{grid-template-columns:repeat(3,1fr)}}
+.affiche{border:1px solid var(--filet);border-radius:4px;padding:13px 15px;
+  background:rgba(255,255,255,.42);font-family:var(--display);font-weight:900;
+  text-transform:uppercase;line-height:1.06;font-size:1.24rem}
+.affiche i{display:block;font-family:var(--badge);font-style:normal;font-weight:400;
+  font-size:11.5px;letter-spacing:.18em;color:var(--b);margin:2px 0}
+
+/* challenge the verdict: the only place on the site where a visitor can answer back */
+.defi{border:1.5px solid var(--encre);border-radius:5px;padding:24px;background:rgba(255,255,255,.42)}
+.defi .lignes{display:grid;gap:10px;margin-top:20px}
+@media(min-width:560px){.defi .lignes{grid-template-columns:1fr 1fr}}
+.defi .lignes .btn{font-size:15.5px}
+.defi .lignes .btn small{display:block;font-family:var(--badge);font-weight:400;
+  font-size:11px;letter-spacing:.14em;opacity:.72;margin-top:3px}
+
+/* A visitor who will never read 146 pages can still be worth a reader:
+   we don't ask them to buy, we ask them to pass it on. */
+.partage .btn{display:inline-block;padding:14px 26px;margin-top:20px}
+
+/* Hero: the primary action is free. The price stays on the page — hiding it
+   reads as a trap — but drops to a service line under the button. */
+.hero-cta{margin-top:30px}
+.btn.grand{display:inline-block;padding:16px 30px;font-size:18px}
+.prix-note{margin-top:13px;font-size:.92rem;color:var(--encre-faible);max-width:52ch}
+.prix-note b{color:var(--encre-doux)}
+.prix-note a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--a)}
 
 /* achat */
 .achat{display:grid;gap:14px;margin-top:30px}
@@ -129,9 +166,13 @@ header.wrap{max-width:980px}
   font-weight:700;font-size:16.5px;padding:13px 20px;text-decoration:none;border-radius:3px;transition:background .18s}
 .btn:hover{background:var(--b)}
 .btn.sec{background:transparent;color:var(--encre);border:1.5px solid var(--encre)}
+/* Le détail des moyens de paiement : il change d'un pays à l'autre, on ne
+   promet donc aucun opérateur précis — la boutique affiche les siens. */
+.offre .paiements{font-size:.79rem;line-height:1.45;color:var(--encre-faible);margin-top:11px}
 .btn.sec:hover{background:var(--encre);color:var(--papier)}
 
 section{padding:44px 0}
+section.wrap{padding:44px 24px}
 .bloc{background:rgba(28,22,10,.035);border:1px solid var(--filet);border-radius:5px;padding:22px}
 
 /* la section qui répond à l'objection */
@@ -190,7 +231,8 @@ footer a:hover{color:var(--b)}
 </head>
 <body>
 
-<header class="wrap">
+<header>
+  <div class="wrap">
   <nav class="nav">
     <span>Duels&nbsp;/&nbsp;Multiverse</span>
     <div class="nav-right">
@@ -200,41 +242,38 @@ footer a:hover{color:var(--b)}
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
       <label for="menu-toggle" class="burger" aria-label="Open menu"><span></span><span></span><span></span></label>
       <ul id="menu-liste">
+        <li><a href="#extraits">3 free duels</a></li>
+        <li><a href="#defi">Challenge a verdict</a></li>
         <li><a href="#why">Why pay</a></li>
-        <li><a href="#method">The method</a></li>
         <li><a href="#duels">The 20 duels</a></li>
-        <li><a href="#extraits">Excerpts</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
   </nav>
+  <div class="filet"></div>
+  </div>
 </header>
-<div class="wrap"><div class="filet"></div></div>
 
 <div class="wrap hero">
   <div class="sur">Tier Debate // Anime &amp; Manga</div>
   <h1>Duels in the Multiverse of Madness</h1>
-  <p class="accroche">Twenty cross-universe clashes, judged on the evidence</p>
+  <p class="accroche">You think you know who wins. Prove it.</p>
   <div class="spectre"><i style="background:#0369a1"></i><i style="background:#b91c1c"></i><i style="background:#c2410c"></i><i style="background:#1e40af"></i><i style="background:#15803d"></i><i style="background:#1d4ed8"></i><i style="background:#6d28d9"></i><i style="background:#c2181b"></i><i style="background:#14507a"></i><i style="background:#be185d"></i><i style="background:#c0175a"></i><i style="background:#0f766e"></i><i style="background:#9f1239"></i><i style="background:#0e7490"></i><i style="background:#be185d"></i><i style="background:#15532f"></i><i style="background:#b91c1c"></i><i style="background:#075985"></i><i style="background:#334155"></i><i style="background:#15803d"></i><i style="background:#6b21a8"></i><i style="background:#166534"></i><i style="background:#6d28d9"></i><i style="background:#c2410c"></i><i style="background:#4338ca"></i><i style="background:#9f1239"></i><i style="background:#b3123c"></i><i style="background:#c2410c"></i><i style="background:#5b21b6"></i><i style="background:#0e6a80"></i><i style="background:#7e22ce"></i><i style="background:#166534"></i><i style="background:#8a3a14"></i><i style="background:#4c1d95"></i><i style="background:#075985"></i><i style="background:#86198f"></i><i style="background:#b45309"></i><i style="background:#7f1d1d"></i><i style="background:#1e3a5f"></i><i style="background:#8f5606"></i></div>
+  <div class="affiches">
+    <div class="affiche">Goku<i>versus</i>Saitama</div>
+    <div class="affiche">Gojo<i>versus</i>Whitebeard</div>
+    <div class="affiche">Denji<i>versus</i>Sukuna</div>
+  </div>
   <p class="chapo">A duel isn't won by whoever's stronger. It's won on the rule the other side never had to face.</p>
+  <p>Twenty cross-universe clashes, judged on the evidence: demonstrated feats only, locked snapshots, victory conditions set <em>before</em> the fight. Nineteen argued verdicts — and one left to the reader.</p>
   <div class="faits">
     <span>159 pages</span><span>A5 format</span><span>PDF — 3.2 MB</span>
     <span>16 universes</span><span>Instant delivery</span>
   </div>
 
-  <div class="achat">
-    <div class="offre">
-      <div class="zone">English-speaking Africa</div>
-      <div class="prix">2,000 FCFA</div>
-      <div class="moyen">Orange Money &amp; MTN Mobile Money</div>
-      <a class="btn" href="https://edtjjpfb.mychariow.online/prd_nhrgahnv" target="_blank" rel="noopener">Buy via Mobile Money</a>
-    </div>
-    <div class="offre">
-      <div class="zone">International</div>
-      <div class="prix">€3.99</div>
-      <div class="moyen">PayPal &amp; card</div>
-      <a class="btn sec" href="https://payhip.com/b/2sVYJ" target="_blank" rel="noopener">Buy via PayPal</a>
-    </div>
+  <div class="hero-cta">
+    <a class="btn grand" href="#extraits">Read 3 complete duels — free</a>
+    <p class="prix-note">No sign-up, no email, no card. The full book after that: <b>2,000 FCFA</b>, about <b>€3</b> — shown in your own currency. <a href="#acheter">See how to pay</a>.</p>
   </div>
 </div>
 
@@ -244,6 +283,54 @@ footer a:hover{color:var(--b)}
   <p>What if the biggest characters in anime and manga fought outside their own universes?</p>
   <p>From Naruto to Luffy, from Gojo to Whitebeard, <em>Duels in the Multiverse of Madness</em> stages twenty impossible fights by weighing each combatant's abilities, techniques and weaknesses against what their own story has actually shown.</p>
   <p>This isn't a raw power contest: every duel turns on a rule, an incompatibility, or one detail that flips the outcome. Twenty fights, nineteen verdicts… and one final question left for the reader.</p>
+</section>
+
+<section class="wrap" id="extraits">
+  <div class="etiquette">Free, no sign-up</div>
+  <h2>Three complete duels, verdicts included</h2>
+  <p>Not previews that stop before the conclusion: three entire sheets — snapshots, table, fight scenario and verdict. Read them, argue with them, then decide whether you want the other seventeen.</p>
+  <div class="extraits">
+    <div class="extrait">
+      <div class="s">Complete duel</div>
+      <div class="t">Mikasa vs Nezuko</div>
+      <p>Both fighters arrive carrying the weapon that made their legend. Both watch it go out against this exact opponent.</p>
+      <a href="extraits/Extrait_05_Mikasa_vs_Nezuko.pdf" download>Download — 8 pages</a>
+    </div>
+    <div class="extrait">
+      <div class="s">Complete duel</div>
+      <div class="t">Itachi vs Escanor</div>
+      <p>The most feared genjutsu in its universe, against the one mind canon has already proven resistant to intrusion.</p>
+      <a href="extraits/Extrait_12_Itachi_vs_Escanor.pdf" download>Download — 8 pages</a>
+    </div>
+    <div class="extrait">
+      <div class="s">Complete duel</div>
+      <div class="t">Luffy vs Naruto</div>
+      <p>Absolute regeneration against a life-drain that presupposes chakra — in an opponent who doesn't have a single drop of it.</p>
+      <a href="extraits/Extrait_14_Luffy_vs_Naruto.pdf" download>Download — 8 pages</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="defi">
+  <div class="defi">
+    <div class="etiquette">The debate continues after the verdict</div>
+    <h2>Disagree? Come take it apart.</h2>
+    <p>Every sheet ends on an open question, and the amber boxes mark exactly where canon itself doesn't settle it. If a verdict looks wrong to you, the argument that breaks it is worth hearing — as long as it stands on feats, like ours do.</p>
+    <p>Write to the author directly on WhatsApp. No bot, no contact form, no group to join: Captain&nbsp;Yami answers himself.</p>
+    <div class="lignes">
+      <a class="btn" href="https://wa.me/237698763670?text=Hi%20Captain%20Yami%21%20I%20was%20on%20the%20Duels%20site%20and%20I%27m%20challenging%20a%20verdict.%20The%20duel%2C%20and%20my%20argument%3A%20" target="_blank" rel="noopener">Challenge a verdict<small>WhatsApp · +237 698 76 36 70</small></a>
+      <a class="btn sec" href="https://wa.me/237678609613?text=Hi%20Captain%20Yami%21%20I%20was%20on%20the%20Duels%20site%20and%20I%27m%20challenging%20a%20verdict.%20The%20duel%2C%20and%20my%20argument%3A%20" target="_blank" rel="noopener">Second line<small>WhatsApp · +237 678 60 96 13</small></a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="partager">
+  <div class="bloc partage">
+    <div class="etiquette">Not much of a reader?</div>
+    <h2>Send it to the one who won't stop talking.</h2>
+    <p>Everyone has someone in their contacts who swears Goku beats Saitama — or the reverse — without ever citing a single scene. The three duels are free and read fine on a phone. Send them the link, and let them argue with the feats.</p>
+    <a class="btn" href="https://api.whatsapp.com/send?text=Read%20this%20and%20tell%20me%20who%20wins.%20Twenty%20anime%20duels%20settled%20on%20demonstrated%20feats%2C%20not%20opinions%20%E2%80%94%20three%20complete%20duels%20are%20free%3A%20https%3A%2F%2Fabdoul77aziz.github.io%2Fduel-multivers%2Fen%2F" target="_blank" rel="noopener">Send the link on WhatsApp</a>
+  </div>
 </section>
 
 <div class="objection" id="why">
@@ -268,11 +355,11 @@ footer a:hover{color:var(--b)}
         <p>Every canon claim here was checked against the original work itself, not against the vague "I'm pretty sure that happened" the internet usually runs on. Where the source doesn't settle something, the book says so instead of guessing.</p>
       </div>
       <div>
-        <h3>What €3.99 actually buys</h3>
-        <p>Less than a single coffee, once — against the mobile data you'd burn watching three videos that give you three different answers, and no source between them. (2,000 FCFA via Mobile Money for readers in Africa.)</p>
+        <h3>What €3 actually buys</h3>
+        <p>Less than a single coffee, once — against the mobile data you'd burn watching three videos that give you three different answers, and no source between them. (2,000 FCFA, whatever that comes to in your own currency.)</p>
       </div>
     </div>
-    <p style="margin-top:26px">And if you're still not convinced: <a href="#extraits" style="border-bottom:2px solid #a99cff">a full duel is free</a>. Read the whole thing, verdict included, and decide after.</p>
+    <p style="margin-top:26px">And if you're still not convinced: <a href="#extraits" style="border-bottom:2px solid #a99cff">three complete duels are free</a>. Read them in full, verdicts included, and decide after.</p>
   </div>
 </div>
 
@@ -314,32 +401,6 @@ footer a:hover{color:var(--b)}
   </ol>
 </section>
 
-<section class="wrap" id="extraits">
-  <div class="etiquette">Free, no sign-up</div>
-  <h2>Read before you buy</h2>
-  <p>One complete duel, verdict included. And two previews that stop exactly where the analysis begins.</p>
-  <div class="extraits">
-    <div class="extrait">
-      <div class="s">Complete duel</div>
-      <div class="t">Mikasa vs Nezuko</div>
-      <p>Both fighters arrive carrying the weapon that made their legend. Both watch it go out against this exact opponent.</p>
-      <a href="extraits/Extrait_05_Mikasa_vs_Nezuko.pdf" download>Download — 8 pages</a>
-    </div>
-    <div class="extrait">
-      <div class="s">Preview</div>
-      <div class="t">Itachi vs Escanor</div>
-      <p>The most feared genjutsu in its universe, against the one mind canon has already proven resistant to intrusion.</p>
-      <a href="extraits/Extrait_12_Itachi_vs_Escanor.pdf" download>Download — 4 pages</a>
-    </div>
-    <div class="extrait">
-      <div class="s">Preview</div>
-      <div class="t">Luffy vs Naruto</div>
-      <p>Absolute regeneration against a life-drain that presupposes chakra — in an opponent who doesn't have a single drop of it.</p>
-      <a href="extraits/Extrait_14_Luffy_vs_Naruto.pdf" download>Download — 4 pages</a>
-    </div>
-  </div>
-</section>
-
 <section class="wrap">
   <div class="etiquette">The author</div>
   <div class="auteur">
@@ -357,27 +418,29 @@ footer a:hover{color:var(--b)}
   <div><h3>What format do I get the book in?</h3><p>A 3.2 MB PDF, A5 format, with a clickable table of contents. Readable on phone, tablet or computer, and light enough to share without burning your data plan.</p></div>
   <div><h3>How do I receive the file after paying?</h3><p>The download link appears immediately after payment and is also emailed to you. No wait, no manual approval.</p></div>
   <div><h3>Are there manga images inside?</h3><p>None, and that's deliberate. This book reproduces no page, screenshot or logo from the works it discusses: it's an independent work of analysis, not affiliated with their publishers. The entire layout is original.</p></div>
-  <div><h3>I disagree with a verdict.</h3><p>Good — that's the point. Every sheet ends on an open question, and the amber boxes mark exactly where canon itself doesn't settle it. Pass the book to the friend who'll take the other side.</p></div>
+  <div><h3>I disagree with a verdict.</h3><p>Good — that's the point. Every sheet ends on an open question, and the amber boxes mark exactly where canon itself doesn't settle it. <a href="#defi">Message us on WhatsApp</a> and make your case: the author answers himself.</p></div>
   <div><h3>What if I don't like it?</h3><p>Given the digital, immediately-accessible nature of the product, no refund is possible once the file has been downloaded, except in case of a genuine product defect (corrupted file, content not matching the description). If there's a problem, contact us within 7 days at <a href="mailto:abdoul.atonfo@outlook.fr">abdoul.atonfo@outlook.fr</a> for a resolution or refund handled case by case. Full details in the <a href="mentions-legales.html">legal notice</a>.</p></div>
 </section>
 
 <div class="wrap"><div class="filet"></div></div>
 
-<section class="wrap" style="padding:48px 0 56px">
-  <h2>Ready for the first duel?</h2>
+<section class="wrap" id="acheter" style="padding:48px 0 56px">
+  <h2>You've read three. Seventeen to go.</h2>
   <p style="margin-bottom:22px">159 pages, nineteen argued verdicts, and one final question left open — yours.</p>
   <div class="achat">
     <div class="offre">
-      <div class="zone">English-speaking Africa</div>
+      <div class="zone">Anywhere in the world</div>
       <div class="prix">2,000 FCFA</div>
-      <div class="moyen">Orange Money &amp; MTN Mobile Money</div>
-      <a class="btn" href="https://edtjjpfb.mychariow.online/prd_nhrgahnv" target="_blank" rel="noopener">Buy via Mobile Money</a>
+      <div class="moyen">About €3 — the price shows up in your own currency</div>
+      <a class="btn" href="https://edtjjpfb.mychariow.online/prd_nhrgahnv" target="_blank" rel="noopener">Buy now</a>
+      <p class="paiements">Mobile Money depending on your country — Orange, MTN, Moov, Wave, Djamo, Airtel — plus card, bank transfer, USSD or crypto.</p>
     </div>
     <div class="offre">
-      <div class="zone">International</div>
-      <div class="prix">€3.99</div>
+      <div class="zone">If you insist on PayPal</div>
+      <div class="prix">€3.49</div>
       <div class="moyen">PayPal &amp; card</div>
       <a class="btn sec" href="https://payhip.com/b/2sVYJ" target="_blank" rel="noopener">Buy via PayPal</a>
+      <p class="paiements">The one payment method the main store doesn't offer.</p>
     </div>
   </div>
 </section>
