@@ -96,8 +96,23 @@ header .wrap{max-width:980px}
 .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:24px;cursor:pointer;background:none;border:none;padding:0}
 .burger span{display:block;height:2px;width:100%;background:var(--encre);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
 .menu-toggle:focus-visible ~ .burger{outline:2px solid var(--b);outline-offset:3px}
-@media(min-width:680px){.nav ul{display:flex}}
-@media(max-width:679px){
+/* Le menu horizontal ne s'affiche que s'il tient vraiment sur une ligne.
+   Avec l'entrée « Livre 2 », les six libellés français demandent ~975px à
+   côté de la marque et du sélecteur de langue : en dessous, le menu passait
+   à la ligne et « FAQ » se retrouvait seul sous FR/EN. On resserre un peu,
+   et le burger prend le relais plus haut qu'avant (960px au lieu de 680) —
+   seuil mesuré, pas estimé : à 925px de contenu le menu tient sur une ligne,
+   à 886px il repasse à deux. */
+@media(min-width:960px){.nav ul{display:flex}}
+@media(min-width:960px){
+  /* `header .wrap` est plafonné à 980px : la largeur de l'écran ne donne
+     donc jamais plus de place au menu, et l'espacement d'origine ne tient
+     pas les six libellés français. Le resserrement vaut à toutes les
+     largeurs, pas seulement dans une plage. */
+  .nav ul{gap:12px}
+  .nav ul li a{letter-spacing:.05em}
+}
+@media(max-width:959px){
   .burger{display:flex}
   .nav ul{
     position:absolute;top:100%;left:0;right:0;
@@ -117,6 +132,20 @@ header .wrap{max-width:980px}
 /* Les 24px horizontaux viennent de .wrap, mais .hero et section.wrap ont la
    même spécificité (ou plus) : sans les réécrire ici, le hero colle au bord de
    l'écran sur mobile et les sections se touchent verticalement. */
+/* Bandeau nouveauté : le livre 2 doit se voir sans scroller, sinon un
+   visiteur pressé ne saura jamais qu'il existe. Couleurs du tome 2. */
+.neuf{background:#1f4e5f;color:#fbf7e9;padding:14px 0}
+.neuf .wrap{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between}
+.neuf .txt{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+.neuf .tag{font-family:var(--badge);font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;background:#a8330c;border-radius:99px;padding:4px 11px}
+.neuf .t{font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:1.35rem;line-height:1}
+.neuf .d{opacity:.82;font-size:.92rem}
+.neuf a.go{background:#fbf7e9;color:#1f4e5f;text-decoration:none;white-space:nowrap;
+  font-family:var(--badge);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;
+  border-radius:99px;padding:10px 18px}
+@media(max-width:560px){.neuf .wrap{justify-content:flex-start}.neuf a.go{width:100%;text-align:center}}
 .hero{padding:44px 24px 40px}
 .sur{font-family:var(--badge);font-size:13.8px;letter-spacing:.22em;text-transform:uppercase;color:var(--b);margin-bottom:14px}
 .accroche{font-family:var(--badge);font-size:16.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--encre-doux);margin-top:14px;max-width:52ch}
@@ -157,7 +186,10 @@ header .wrap{max-width:980px}
 
 /* achat */
 .achat{display:grid;gap:14px;margin-top:30px}
-@media(min-width:620px){.achat{grid-template-columns:1fr 1fr}}
+@media(min-width:620px){.achat.deux{grid-template-columns:1fr 1fr}}
+/* Payhip retiré le 24/09 : son tunnel PayPal échoue (voir le test de
+   paiement). Chariow couvre déjà carte, virement, USSD et crypto. */
+.achat .offre{max-width:520px}
 .offre{border:1px solid var(--filet);border-radius:4px;padding:18px;background:rgba(255,255,255,.42)}
 .offre .zone{font-family:var(--badge);font-size:12.1px;letter-spacing:.13em;text-transform:uppercase;color:var(--b);margin-bottom:4px}
 .offre .prix{font-family:var(--display);font-weight:900;font-size:2rem;line-height:1;margin:6px 0 3px}
@@ -213,6 +245,7 @@ ol.duels .d em{font-family:var(--badge);font-size:11px;letter-spacing:.12em;text
 .extrait .t{font-family:var(--display);font-weight:700;font-size:1.05rem;text-transform:uppercase;margin-bottom:3px}
 .extrait .s{font-family:var(--badge);font-size:11.6px;letter-spacing:.11em;text-transform:uppercase;color:var(--b);margin-bottom:8px}
 .extrait p{font-size:.86rem;color:var(--encre-faible);margin-bottom:12px}
+.extrait .pdf-lien{opacity:.62;font-size:.82rem;margin-left:12px}
 .extrait a{font-weight:700;font-size:.9rem;text-decoration:none;border-bottom:2px solid var(--a);padding-bottom:1px}
 
 .faq div{padding:15px 0;border-top:1px solid var(--filet)}
@@ -228,6 +261,10 @@ footer{padding:26px 0 44px;font-family:var(--badge);font-size:12.1px;letter-spac
 footer a{text-decoration:none}
 footer a:hover{color:var(--b)}
 </style>
+<!-- Mesure d'audience : GoatCounter. Sans cookie, sans donnée personnelle,
+     donc sans bandeau de consentement à afficher. -->
+<script data-goatcounter="https://captainyami77.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -246,6 +283,7 @@ footer a:hover{color:var(--b)}
         <li><a href="#defi">Défier un verdict</a></li>
         <li><a href="#pourquoi">Pourquoi payer</a></li>
         <li><a href="#duels">Les 20 duels</a></li>
+        <li><a href="#livre2">Livre 2</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
@@ -253,6 +291,17 @@ footer a:hover{color:var(--b)}
   <div class="filet"></div>
   </div>
 </header>
+
+<div class="neuf">
+  <div class="wrap">
+    <div class="txt">
+      <span class="tag">Nouveau</span>
+      <span class="t">Livre 2 — Duels dans le Cross-Verse de la Folie</span>
+      <span class="d">Vingt nouveaux duels, quarante combattants, dix-huit univers. Trois à lire gratuitement.</span>
+    </div>
+    <a class="go" href="#livre2">Découvrir le livre 2</a>
+  </div>
+</div>
 
 <div class="wrap hero">
   <div class="sur">Tier Debate // Anime &amp; Manga</div>
@@ -294,19 +343,51 @@ footer a:hover{color:var(--b)}
       <div class="s">Duel complet</div>
       <div class="t">Mikasa vs Nezuko</div>
       <p>Les deux combattantes arrivent avec l'arme qui a fait leur légende. Toutes deux la voient s'éteindre.</p>
-      <a href="extraits/Extrait_05_Mikasa_vs_Nezuko.pdf" download>Télécharger — 8 pages</a>
+      <a href="duels/mikasa-vs-nezuko/">Lire le duel</a>
+      <a href="extraits/Extrait_05_Mikasa_vs_Nezuko.pdf" download class="pdf-lien">PDF — 8 pages</a>
     </div>
     <div class="extrait">
       <div class="s">Duel complet</div>
       <div class="t">Itachi vs Escanor</div>
       <p>Le genjutsu le plus redouté de son univers, face au seul esprit dont le canon a déjà prouvé qu'il résiste.</p>
-      <a href="extraits/Extrait_12_Itachi_vs_Escanor.pdf" download>Télécharger — 8 pages</a>
+      <a href="duels/itachi-vs-escanor/">Lire le duel</a>
+      <a href="extraits/Extrait_12_Itachi_vs_Escanor.pdf" download class="pdf-lien">PDF — 8 pages</a>
     </div>
     <div class="extrait">
       <div class="s">Duel complet</div>
       <div class="t">Luffy vs Naruto</div>
       <p>Une régénération absolue contre un drain de vie qui présuppose du chakra — chez un adversaire qui n'en a pas.</p>
-      <a href="extraits/Extrait_14_Luffy_vs_Naruto.pdf" download>Télécharger — 7 pages</a>
+      <a href="duels/luffy-vs-naruto/">Lire le duel</a>
+      <a href="extraits/Extrait_14_Luffy_vs_Naruto.pdf" download class="pdf-lien">PDF — 7 pages</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="extraits2">
+  <div class="etiquette">Gratuit — Livre 2</div>
+  <h2>Trois duels du Cross-Verse, en accès libre</h2>
+  <p>Le second livre a lui aussi ses trois duels ouverts. Même règle : la fiche entière, verdict compris.</p>
+  <div class="extraits">
+    <div class="extrait">
+      <div class="s">Duel complet</div>
+      <div class="t">Deku vs Tanjiro</div>
+      <p>Un Detroit Smash porté par neuf générations de force, contre treize formes de sabre enchaînées sans jamais s'arrêter.</p>
+      <a href="duels/deku-vs-tanjiro/">Lire le duel</a>
+      <a href="extraits2/Extrait_02_Deku_vs_Tanjiro.pdf" download class="pdf-lien">PDF</a>
+    </div>
+    <div class="extrait">
+      <div class="s">Duel complet</div>
+      <div class="t">Natsu vs Rengoku</div>
+      <p>Un tourbillon de flammes qui a vaincu Zero, contre une charge capable de creuser le sol. L'ouragan cherche la durée ; la lame n'a besoin que d'un instant.</p>
+      <a href="duels/natsu-vs-rengoku/">Lire le duel</a>
+      <a href="extraits2/Extrait_09_Natsu_vs_Rengoku.pdf" download class="pdf-lien">PDF</a>
+    </div>
+    <div class="extrait">
+      <div class="s">Duel complet</div>
+      <div class="t">Yamamoto vs Roger</div>
+      <p>Une chaleur comparable au cœur du Soleil, face à une lame qui a tenu tête à Barbe Blanche.</p>
+      <a href="duels/yamamoto-vs-roger/">Lire le duel</a>
+      <a href="extraits2/Extrait_13_Yamamoto_vs_Roger.pdf" download class="pdf-lien">PDF</a>
     </div>
   </div>
 </section>
@@ -433,14 +514,27 @@ footer a:hover{color:var(--b)}
       <div class="prix">2 000 FCFA</div>
       <div class="moyen">Environ 3 €&nbsp;— le prix s'affiche tout seul dans votre monnaie</div>
       <a class="btn" href="https://edtjjpfb.mychariow.online/prd_u2jr6m8o" target="_blank" rel="noopener">Acheter maintenant</a>
-      <p class="paiements">Mobile Money selon votre pays — Orange, MTN, Moov, Wave, Djamo, Airtel — mais aussi carte bancaire, virement, USSD ou crypto.</p>
+      <p class="paiements">Mobile Money selon votre pays — Orange, MTN, Moov, Wave, Djamo, Airtel — mais aussi <strong>carte bancaire, virement, USSD ou crypto</strong>. Le prix s'affiche dans votre monnaie et la livraison est immédiate.</p>
     </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="filet"></div></div>
+
+<section class="wrap" id="livre2" style="padding:40px 0 52px">
+  <div class="etiquette">Livre 2</div>
+  <h2>Duels dans le Cross-Verse de la Folie — Livre 2</h2>
+  <p class="accroche" style="margin:8px 0 14px">L'écart n'est pas la réponse. C'est le début du problème.</p>
+  <p>Vingt nouveaux duels, quarante combattants, dix-huit univers. Cette fois les combattants sont délibérément dépareillés : des héros mortels face à des destructeurs de planètes. La question n'est jamais qui est le plus fort, mais <strong>à quelles conditions le plus faible l'emporte</strong>. Aucun combattant ne reçoit zéro chance.</p>
+  <p style="margin-top:12px"><strong>266 pages · 20 duels · 18 univers · 43 illustrations · PDF</strong><br>
+     <span style="color:var(--encre-faible)">Vous n'avez pas besoin d'avoir lu le premier livre.</span></p>
+  <div class="achat" style="margin-top:22px">
     <div class="offre">
-      <div class="zone">Si vous tenez à PayPal</div>
-      <div class="prix">3,49 €</div>
-      <div class="moyen">PayPal &amp; carte bancaire</div>
-      <a class="btn sec" href="https://payhip.com/b/fBbCg" target="_blank" rel="noopener">Acheter par PayPal</a>
-      <p class="paiements">Le seul moyen de paiement que la boutique principale ne propose pas.</p>
+      <div class="zone">Partout dans le monde</div>
+      <div class="prix">2 000 FCFA</div>
+      <div class="moyen">Environ 3 € — le prix s'affiche dans votre monnaie</div>
+      <a class="btn" href="https://edtjjpfb.mychariow.online/prd_7iitze14" target="_blank" rel="noopener">Acheter le livre 2</a>
+      <p class="paiements">Mobile Money selon votre pays — Orange, MTN, Moov, Wave, Djamo, Airtel — mais aussi <strong>carte bancaire, virement, USSD ou crypto</strong>. Le prix s'affiche dans votre monnaie et la livraison est immédiate.</p>
     </div>
   </div>
 </section>

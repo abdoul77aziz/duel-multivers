@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdoul77aziz.github.io/duel-multivers/sitemap.xml
